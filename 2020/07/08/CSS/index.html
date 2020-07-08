@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS | 万古长空，一朝风月</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="学习目标: 学会使用CSS选择器 熟记CSS样式和外观属性 熟练掌握CSS各种选择器 熟练掌握CSS各种选择器 熟练掌握CSS三种显示模式 熟练掌握CSS背景属性 熟练掌握CSS三大特性 熟练掌握CSS盒子模型 熟练掌握CSS浮动 熟练掌握CSS定位 熟练掌握CSS高级技巧强化CSS  CSS(Cascading Style Sheets)  美化样式三种样式表总结（位置）   样式表 优点 缺点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS">
+<meta property="og:url" content="http://yuanquan.com/2020/07/08/CSS/index.html">
+<meta property="og:site_name" content="万古长空，一朝风月">
+<meta property="og:description" content="学习目标: 学会使用CSS选择器 熟记CSS样式和外观属性 熟练掌握CSS各种选择器 熟练掌握CSS各种选择器 熟练掌握CSS三种显示模式 熟练掌握CSS背景属性 熟练掌握CSS三大特性 熟练掌握CSS盒子模型 熟练掌握CSS浮动 熟练掌握CSS定位 熟练掌握CSS高级技巧强化CSS  CSS(Cascading Style Sheets)  美化样式三种样式表总结（位置）   样式表 优点 缺点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yuanquan.com/2020/07/08/CSS/1498441839910.png">
+<meta property="article:published_time" content="2020-07-08T09:08:59.000Z">
+<meta property="article:modified_time" content="2020-07-08T09:10:26.733Z">
+<meta property="article:author" content="袁泉">
+<meta property="article:tag" content="CSS基础学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yuanquan.com/2020/07/08/CSS/1498441839910.png">
+  
+    <link rel="alternate" href="/atom.xml" title="万古长空，一朝风月" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">万古长空，一朝风月</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">学海无涯</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yuanquan.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/08/CSS/" class="article-date">
+  <time datetime="2020-07-08T09:08:59.000Z" itemprop="datePublished">2020-07-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标:"></a>学习目标:</h2><ul>
+<li>学会使用CSS选择器</li>
+<li>熟记CSS样式和外观属性</li>
+<li>熟练掌握CSS各种选择器</li>
+<li>熟练掌握CSS各种选择器</li>
+<li>熟练掌握CSS三种显示模式</li>
+<li>熟练掌握CSS背景属性</li>
+<li>熟练掌握CSS三大特性</li>
+<li>熟练掌握CSS盒子模型</li>
+<li>熟练掌握CSS浮动</li>
+<li>熟练掌握CSS定位</li>
+<li>熟练掌握CSS高级技巧强化CSS</li>
+</ul>
+<h2 id="CSS-Cascading-Style-Sheets-美化样式"><a href="#CSS-Cascading-Style-Sheets-美化样式" class="headerlink" title="CSS(Cascading Style Sheets)  美化样式"></a>CSS(Cascading Style Sheets)  美化样式</h2><h2 id="三种样式表总结（位置）"><a href="#三种样式表总结（位置）" class="headerlink" title="三种样式表总结（位置）"></a>三种样式表总结（位置）</h2><table>
+<thead>
+<tr>
+<th>样式表</th>
+<th>优点</th>
+<th>缺点</th>
+<th>使用情况</th>
+<th>控制范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行内样式表</td>
+<td>书写方便，权重高</td>
+<td>没有实现样式和结构相分离</td>
+<td>较少</td>
+<td>控制一个标签（少）</td>
+</tr>
+<tr>
+<td>内部样式表</td>
+<td>部分结构和样式相分离</td>
+<td>没有彻底分离</td>
+<td>较多</td>
+<td>控制一个页面（中）</td>
+</tr>
+<tr>
+<td>外部样式表</td>
+<td>完全实现结构和样式相分离</td>
+<td>需要引入</td>
+<td>最多，强烈推荐</td>
+<td>控制整个站点（多）</td>
+</tr>
+</tbody></table>
+<h1 id="CSS基础选择器"><a href="#CSS基础选择器" class="headerlink" title="CSS基础选择器"></a>CSS基础选择器</h1><h2 id="标签选择器（元素选择器）"><a href="#标签选择器（元素选择器）" class="headerlink" title="标签选择器（元素选择器）"></a>标签选择器（元素选择器）</h2><ul>
+<li><p>标签选择器是指用HTML标签名称作为选择器。</p>
+<h2 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h2></li>
+<li><p>类选择器使用“.”（英文点号）进行标识，后面紧跟类名。</p>
+</li>
+<li><p>命名规范：  见附件（Web前端开发规范手册.doc）</p>
+</li>
+</ul>
+<h2 id="多类名选择器"><a href="#多类名选择器" class="headerlink" title="多类名选择器"></a>多类名选择器</h2><ul>
+<li>我们可以给标签指定多个类名，以空格为分隔。</li>
+</ul>
+<h2 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h2><ul>
+<li>id选择器使用“#”进行标识，后面紧跟id名。</li>
+</ul>
+<h1 id="CSS复合选择器"><a href="#CSS复合选择器" class="headerlink" title="CSS复合选择器"></a>CSS复合选择器</h1><ul>
+<li>复合选择器是由两个或多个基础选择器。</li>
+</ul>
+<h2 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h2><ul>
+<li>交集选择器由两个选择器构成，其中第一个为标签选择器，第二个为class选择器，两个选择器之间不能有空格，如h3.special。</li>
+</ul>
+<h2 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h2><ul>
+<li>并集选择器是各个选择器通过<strong style="color:#f00">逗号</strong>连接而成，都可以作为并集选择器的一部分。如果某些选择器定义的样式完全相同，或部分相同，就可以利用并集选择器为它们定义相同的CSS样式。</li>
+</ul>
+<h2 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h2><ul>
+<li>后代选择器又称为包含选择器，用来选择元素或元素组的后代，其写法就是把外层标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套时，内层标签就成为外层标签的后代。</li>
+</ul>
+<h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><ul>
+<li>子元素选择器只能选择作为某元素子元素的元素。其写法就是把父级标签写在前面，子级标签写在后面，中间跟一个 &gt; 进行连接，注意，符号左右两侧各保留一个空格。</li>
+</ul>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><ul>
+<li>伪类选择器用于向某些选择器添加特殊的效果。比如给链接添加特殊效果， 比如可以选择 第1个，第n个元素。</li>
+</ul>
+<h3 id="链接伪类选择器"><a href="#链接伪类选择器" class="headerlink" title="链接伪类选择器"></a>链接伪类选择器</h3><ul>
+<li><p>:link      /* 未访问的链接 */</p>
+</li>
+<li><p>:visited   /* 已访问的链接 */</p>
+</li>
+<li><p>:hover     /* 鼠标移动到链接上 */</p>
+</li>
+<li><p>:active    /* 选定的链接 */</p>
+</li>
+<li><p>注意写的时候，他们的顺序尽量不要颠倒  按照  lvha 的顺序。   love   hate  爱上了讨厌 记忆法    或者   lv 包包 非常 hao </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">块级元素的特点：</span><br><span class="line">（1）总是从新行开始</span><br><span class="line">（2）高度，行高、外边距以及内边距都可以控制。</span><br><span class="line">（3）宽度默认是容器的100%</span><br><span class="line">（4）可以容纳内联元素和其他块元素。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">行内元素的特点：</span><br><span class="line">（1）和相邻行内元素在一行上。</span><br><span class="line">（2）高、宽无效，但水平方向的padding和margin可以设置，垂直方向的无效。</span><br><span class="line">（3）默认宽度就是它本身内容的宽度。</span><br><span class="line">（4）行内元素只能容纳文本或则其他行内元素。</span><br></pre></td></tr></table></figure>
+
+<h1 id="CSS-三大特性"><a href="#CSS-三大特性" class="headerlink" title="CSS 三大特性"></a>CSS 三大特性</h1><p>层叠 继承  优先级 。</p>
+<h2 id="CSS层叠性"><a href="#CSS层叠性" class="headerlink" title="CSS层叠性"></a>CSS层叠性</h2><ul>
+<li><p>所谓层叠性是指多种CSS样式的叠加。</p>
+<ul>
+<li>1、样式冲突，遵循的原则是就近原则。 那个样式离着结构近，就执行那个样式。</li>
+<li>2、样式不冲突，不会层叠</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS继承性"><a href="#CSS继承性" class="headerlink" title="CSS继承性"></a>CSS继承性</h2><ul>
+<li>所谓继承性是指书写CSS样式表时，子标签会继承父标签的某些样式，如文本颜色和字号。想要设置一个可继承的属性，只需将它应用于父元素即可。</li>
+<li>简单的理解就是：  子承父业。</li>
+</ul>
+<h2 id="CSS优先级"><a href="#CSS优先级" class="headerlink" title="CSS优先级"></a>CSS优先级</h2><ul>
+<li>定义CSS样式时，经常出现两个或更多规则应用在同一元素上，这时就会出现优先级的问题。</li>
+</ul>
+<h2 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h2><ul>
+<li>元素的浮动是指设置了浮动属性的元素会脱离标准标准流的控制，移动到其父元素中指定位置的过程。</li>
+</ul>
+<h2 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h2><p>准确地说，并不是清除浮动，而是清除浮动后造成的影响</p>
+<h2 id="清除浮动本质"><a href="#清除浮动本质" class="headerlink" title="清除浮动本质"></a>清除浮动本质</h2><p>清除浮动主要为了解决父级元素因为子级浮动引起内部高度为0 的问题。</p>
+<h2 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h2><p>其实本质叫做闭合浮动更好一些, 记住，清除浮动就是把浮动的盒子圈到里面，让父盒子闭合出口和入口不让他们出来影响其他元素。</p>
+<p>在CSS中，clear属性用于清除浮动，其基本语法格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;clear:属性值;&#125;   clear 清除</span><br></pre></td></tr></table></figure>
+
+<h3 id="父级添加overflow属性方法"><a href="#父级添加overflow属性方法" class="headerlink" title="父级添加overflow属性方法"></a>父级添加overflow属性方法</h3><p>可以通过触发BFC的方式，可以实现清除浮动效果。</p>
+<h3 id="使用after伪元素清除浮动"><a href="#使用after伪元素清除浮动" class="headerlink" title="使用after伪元素清除浮动"></a>使用after伪元素清除浮动</h3><h3 id="使用before和after双伪元素清除浮动"><a href="#使用before和after双伪元素清除浮动" class="headerlink" title="使用before和after双伪元素清除浮动"></a>使用before和after双伪元素清除浮动</h3><p>使用方法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;  <span class="comment">/* 这句话可以出发BFC BFC可以清除浮动,BFC我们后面讲 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line"> <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  *zoom:1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="四种定位总结"><a href="#四种定位总结" class="headerlink" title="四种定位总结"></a>四种定位总结</h1><table>
+<thead>
+<tr>
+<th>定位模式</th>
+<th>是否脱标占有位置</th>
+<th>是否可以使用边偏移</th>
+<th>移动位置基准</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>静态static</td>
+<td>不脱标，正常模式</td>
+<td>不可以</td>
+<td>正常模式</td>
+</tr>
+<tr>
+<td>相对定位relative</td>
+<td>脱标，占有位置</td>
+<td>可以</td>
+<td>相对自身位置移动（自恋型）</td>
+</tr>
+<tr>
+<td>绝对定位absolute</td>
+<td>完全脱标，不占有位置</td>
+<td>可以</td>
+<td>相对于定位父级移动位置（拼爹型）</td>
+</tr>
+<tr>
+<td>固定定位fixed</td>
+<td>完全脱标，不占有位置</td>
+<td>可以</td>
+<td>相对于浏览器移动位置（认死理型）</td>
+</tr>
+</tbody></table>
+<h3 id="去除图片底侧空白缝隙"><a href="#去除图片底侧空白缝隙" class="headerlink" title="去除图片底侧空白缝隙"></a>去除图片底侧空白缝隙</h3><ul>
+<li><p>有个很重要特性你要记住： 图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。这样会造成一个问题，就是图片底侧会有一个空白缝隙。</p>
+</li>
+<li><p>解决的方法就是:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 给img vertical-align:middle | top等等。  让图片不要和基线对齐。![](CSS&#x2F;1633.png)</span><br><span class="line">2. 给img 添加 display：block; 转换为块级元素就不会存在问题了。![](CSS&#x2F;sina1.png)</span><br></pre></td></tr></table></figure>
+
+<h1 id="溢出的文字隐藏"><a href="#溢出的文字隐藏" class="headerlink" title="溢出的文字隐藏"></a>溢出的文字隐藏</h1><ul>
+<li>必须是3句话，缺一不可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.white-space: nowrap;</span><br><span class="line">2.overflow:hidden;</span><br><span class="line">3.text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#CSS精灵技术（sprite） 小妖精  雪碧</p>
+<h3 id="精灵技术的使用"><a href="#精灵技术的使用" class="headerlink" title="精灵技术的使用"></a>精灵技术的使用</h3><p>CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（精灵图），然而，各个网页元素通常只需要精灵图中不同位置的某个小图，要想精确定位到精灵图中的某个小图，就需要使用CSS的background-image、background-repeat和background-position属性进行背景定位，其中最关键的是使用background-position属性精确地定位。</p>
+<h3 id="BFC元素所具有的特性"><a href="#BFC元素所具有的特性" class="headerlink" title="BFC元素所具有的特性"></a>BFC元素所具有的特性</h3><h4 id="BFC布局规则特性："><a href="#BFC布局规则特性：" class="headerlink" title="BFC布局规则特性："></a>BFC布局规则特性：</h4><ul>
+<li>在BFC中，盒子从顶端开始垂直地一个接一个地排列.</li>
+<li>盒子垂直方向的距离由margin决定。属于同一个BFC的两个相邻盒子的margin会发生重叠</li>
+<li>在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)（对于从右到左的格式来说，则触碰到右边缘）- </li>
+<li>BFC的区域不会与浮动盒子产生交集，而是紧贴浮动边缘。</li>
+<li>计算BFC的高度时，自然也会检测浮动或者定位的盒子高度。</li>
+</ul>
+<p>它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<h3 id="BFC的主要用途"><a href="#BFC的主要用途" class="headerlink" title="BFC的主要用途"></a>BFC的主要用途</h3><p>BFC能用来做什么？</p>
+<ul>
+<li><p>清除元素内部浮动</p>
+</li>
+<li><p>解决外边距合并问题</p>
+</li>
+<li><p>制作右侧自适应的盒子问题</p>
+</li>
+</ul>
+<h3 id="BFC-总结"><a href="#BFC-总结" class="headerlink" title="BFC 总结"></a>BFC 总结</h3><ul>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。包括浮动，和外边距合并等等，因此，有了这个特性，我们布局的时候就不会出现意外情况了。</li>
+</ul>
+<h2 id="优雅降级和渐进增强"><a href="#优雅降级和渐进增强" class="headerlink" title="优雅降级和渐进增强"></a>优雅降级和渐进增强</h2><ul>
+<li>区别：渐进增强是向上兼容，优雅降级是向下兼容。</li>
+</ul>
+<h2 id="CSS-W3C-统一验证工具"><a href="#CSS-W3C-统一验证工具" class="headerlink" title="CSS W3C 统一验证工具"></a>CSS W3C 统一验证工具</h2><ul>
+<li>CssStats 是一个在线的 CSS 代码分析工具</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网址是：  http:&#x2F;&#x2F;www.cssstats.com&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>如果你想要更全面的，这个神奇，你值得拥有：</p>
+<p>W3C 统一验证工具：    <a href="http://validator.w3.org/unicorn/" target="_blank" rel="noopener">http://validator.w3.org/unicorn/</a>  ☆☆☆☆☆</p>
+<p>因为它可以检测本地文件哦！！</p>
+<h2 id="伸缩布局-CSS3"><a href="#伸缩布局-CSS3" class="headerlink" title="伸缩布局(CSS3)"></a>伸缩布局(CSS3)</h2><p>CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。</p>
+<p>主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向</p>
+<p>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的</p>
+<p>方向：默认主轴从左向右，侧轴默认从上到下</p>
+<p>主轴和侧轴并不是固定不变的，通过flex-direction可以互换。</p>
+<p><img src="./1498441839910.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuanquan.com/2020/07/08/CSS/" data-id="ckcd4a2jt0000kctn58k1au5u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">CSS基础学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/08/javascript%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">CSS基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">HTML基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback%E4%BD%93%E4%BC%9A/" rel="tag">callback体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">hexo 上传图片不显示问题解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">javascipt基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" rel="tag">引用错误和类型错误</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">CSS基础学习</a> <a href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">HTML基础学习</a> <a href="/tags/callback%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">callback体会</a> <a href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">hexo 上传图片不显示问题解决</a> <a href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascipt基础学习</a> <a href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" style="font-size: 10px;">引用错误和类型错误</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/08/CSS/">CSS</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/08/javascript%E5%9F%BA%E7%A1%80/">javascript基础</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/05/HTML/">HTML</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/30/referenceErrorAndTypeError/">referenceErrorAndTypeError</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/hexoUploadImg/">hexoUploadImg</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 袁泉<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
