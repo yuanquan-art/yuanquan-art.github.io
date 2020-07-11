@@ -90,13 +90,274 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="JavaScript-面向对象编程"><a href="#JavaScript-面向对象编程" class="headerlink" title="JavaScript 面向对象编程"></a>JavaScript 面向对象编程</h2><h3 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象?"></a>什么是对象?</h3><blockquote>
+<p>Everything is object （万物皆对象）</p>
+</blockquote>
+<img src="./20160823024542444.jpg" alt>
+
+<p>对象到底是什么，我们可以从两次层次来理解。</p>
+<p>(1) 对象是单个事物的抽象。</p>
+<p>(2) 对象是一个容器，封装了属性（property）和方法（method）。</p>
+<h3 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h3><blockquote>
+<p>面向对象不是新的东西，它只是过程式代码的一种高度封装，目的在于提高代码的开发效率和可维护性。</p>
+</blockquote>
+<img src="./664ba37eeee9f4623c06c066867f1d38_r.jpg" width="400" alt>
+
+<p>面向对象编程 —— Object Oriented Programming，简称 OOP ，是一种编程开发思想。<br>它将真实世界各种复杂的关系，抽象为一个个对象，然后由对象之间的分工与合作，完成对真实世界的模拟。</p>
+<p>在面向对象程序开发思想中，每一个对象都是功能中心，具有明确分工，可以完成接受信息、处理数据、发出信息等任务。<br>因此，面向对象编程具有灵活、代码可复用、高度模块化等特点，容易维护和开发，比起由一系列函数或指令组成的传统的过程式编程（procedural programming），更适合多人合作的大型软件项目。</p>
+<p>面向对象与面向过程：</p>
+<ul>
+<li>面向过程就是亲力亲为，事无巨细，面面俱到，步步紧跟，有条不紊</li>
+<li>面向对象就是找一个对象，指挥得结果</li>
+<li>面向对象将执行者转变成指挥者</li>
+<li>面向对象不是面向过程的替代，而是面向过程的封装</li>
+</ul>
+<p>面向对象的特性：</p>
+<ul>
+<li>封装性</li>
+<li>继承性</li>
+<li>[多态性]</li>
+</ul>
+<p>扩展阅读：</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener">维基百科 - 面向对象程序设计</a></li>
+<li><a href="https://www.zhihu.com/question/19854505" target="_blank" rel="noopener">知乎：如何用一句话说明什么是面向对象思想？</a></li>
+<li><a href="https://www.zhihu.com/question/31021366" target="_blank" rel="noopener">知乎：什么是面向对象编程思想？</a></li>
+</ul>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><p>内容引导：</p>
+<ul>
+<li>使用 prototype 原型对象解决构造函数的问题</li>
+<li>分析 构造函数、prototype 原型对象、实例对象 三者之间的关系</li>
+<li>属性成员搜索原则：原型链</li>
+<li>实例对象读写原型对象中的成员</li>
+<li>原型对象的简写形式</li>
+<li>原生对象的原型<ul>
+<li>Object</li>
+<li>Array</li>
+<li>String</li>
+<li>…</li>
+</ul>
+</li>
+<li>原型对象的问题</li>
+<li>构造的函数和原型对象使用建议</li>
+</ul>
+<h4 id="构造函数、实例、原型三者之间的关系"><a href="#构造函数、实例、原型三者之间的关系" class="headerlink" title="构造函数、实例、原型三者之间的关系"></a>构造函数、实例、原型三者之间的关系</h4><img src="./构造函数-实例-原型之间的关系.png" alt>
+
+
+
+<p>总结：</p>
+<ul>
+<li>任何函数都具有一个 <code>prototype</code> 属性，该属性是一个对象</li>
+<li>构造函数的 <code>prototype</code> 对象默认都有一个 <code>constructor</code> 属性，指向 <code>prototype</code> 对象所在函数</li>
+<li>通过构造函数得到的实例对象内部会包含一个指向构造函数的 <code>prototype</code> 对象的指针 <code>__proto__</code></li>
+<li>所有实例都直接或间接继承了原型对象的成员</li>
+</ul>
+<h3 id="属性成员的搜索原则：原型链"><a href="#属性成员的搜索原则：原型链" class="headerlink" title="属性成员的搜索原则：原型链"></a>属性成员的搜索原则：原型链</h3><p>每当代码读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性</p>
+<ul>
+<li>搜索首先从对象实例本身开始</li>
+<li>如果在实例中找到了具有给定名字的属性，则返回该属性的值</li>
+<li>如果没有找到，则继续搜索指针指向的原型对象，在原型对象中查找具有给定名字的属性</li>
+<li>如果在原型对象中找到了这个属性，则返回该属性的值</li>
+</ul>
+<h3 id="原生对象的原型"><a href="#原生对象的原型" class="headerlink" title="原生对象的原型"></a>原生对象的原型</h3><ul>
+<li>Object.prototype</li>
+<li>Function.prototype</li>
+<li>Array.prototype</li>
+<li>String.prototype</li>
+<li>Number.prototype</li>
+<li>Date.prototype</li>
+<li>…</li>
+</ul>
+<h3 id="原型对象的问题"><a href="#原型对象的问题" class="headerlink" title="原型对象的问题"></a>原型对象的问题</h3><ul>
+<li>共享数组</li>
+<li>共享对象</li>
+</ul>
+<p>如果真的希望可以被实例对象之间共享和修改这些共享数据那就不是问题。但是如果不希望实例之间共享和修改这些共享数据则就是问题。</p>
+<p>一个更好的建议是，最好不要让实例之间互相共享这些数组或者对象成员，一旦修改的话会导致数据的走向很不明确而且难以维护。</p>
+<h4 id="原型对象使用建议"><a href="#原型对象使用建议" class="headerlink" title="原型对象使用建议"></a>原型对象使用建议</h4><ul>
+<li>私有成员（一般就是非函数成员）放到构造函数中</li>
+<li>共享成员（一般就是函数）放到原型对象中</li>
+<li>如果重置了 <code>prototype</code> 记得修正 <code>constructor</code> 的指向</li>
+</ul>
+<h3 id="参数绑定this"><a href="#参数绑定this" class="headerlink" title="参数绑定this"></a>参数绑定this</h3><ul>
+<li><p>call 和 apply 特性一样</p>
+<ul>
+<li>都是用来调用函数，而且是立即调用</li>
+<li>但是可以在调用函数的同时，通过第一个参数指定函数内部 <code>this</code> 的指向</li>
+<li>call 调用的时候，参数必须以参数列表的形式进行传递，也就是以逗号分隔的方式依次传递即可</li>
+<li>apply 调用的时候，参数必须是一个数组，然后在执行的时候，会将数组内部的元素一个一个拿出来，与形参一一对应进行传递</li>
+<li>如果第一个参数指定了 <code>null</code> 或者 <code>undefined</code> 则内部 this 指向 window</li>
+</ul>
+</li>
+<li><p>bind</p>
+<ul>
+<li>可以用来指定内部 this 的指向，然后生成一个改变了 this 指向的新的函数</li>
+<li>它和 call、apply 最大的区别是：bind 不会调用</li>
+<li>bind 支持传递参数，它的传参方式比较特殊，一共有两个位置可以传递<ul>
+<li><ol>
+<li>在 bind 的同时，以参数列表的形式进行传递</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>在调用的时候，以参数列表的形式进行传递</li>
+</ol>
+</li>
+<li>那到底以谁 bind 的时候传递的参数为准呢还是以调用的时候传递的参数为准</li>
+<li>两者合并：bind 的时候传递的参数和调用的时候传递的参数会合并到一起，传递到函数内部</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>闭包就是能够读取其他函数内部变量的函数，<br>由于在 Javascript 语言中，只有函数内部的子函数才能读取局部变量，<br>因此可以把闭包简单理解成 “定义在一个函数内部的函数”。<br>所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
+<p>闭包的用途：</p>
+<ul>
+<li>可以在函数外部读取函数内部成员</li>
+<li>让函数内成员始终存活在内存中</li>
+</ul>
+<h4 id="正则表达式的作用"><a href="#正则表达式的作用" class="headerlink" title="正则表达式的作用"></a>正则表达式的作用</h4><ol>
+<li>给定的字符串是否符合正则表达式的过滤逻辑(匹配)</li>
+<li>可以通过正则表达式，从字符串中获取我们想要的特定部分(提取)</li>
+<li>强大的字符串替换能力(替换)</li>
+</ol>
+<h4 id="正则表达式的特点"><a href="#正则表达式的特点" class="headerlink" title="正则表达式的特点"></a>正则表达式的特点</h4><ol>
+<li>灵活性、逻辑性和功能性非常的强</li>
+<li>可以迅速地用极简单的方式达到字符串的复杂控制</li>
+<li>对于刚接触的人来说，比较晦涩难懂</li>
+</ol>
+<h3 id="正则表达式的测试"><a href="#正则表达式的测试" class="headerlink" title="正则表达式的测试"></a>正则表达式的测试</h3><ul>
+<li><a href="https://c.runoob.com/front-end/854" target="_blank" rel="noopener">在线测试正则</a></li>
+<li>工具中使用正则表达式<ul>
+<li>sublime/vscode/word</li>
+<li>演示替换所有的数字</li>
+</ul>
+</li>
+</ul>
+<h3 id="正则表达式的组成"><a href="#正则表达式的组成" class="headerlink" title="正则表达式的组成"></a>正则表达式的组成</h3><ul>
+<li>普通字符</li>
+<li>特殊字符(元字符)：正则表达式中有特殊意义的字符</li>
+</ul>
+<p>示例演示：</p>
+<ul>
+<li><code>\d</code> 匹配数字</li>
+<li><code>ab\d</code> 匹配 ab1、ab2</li>
+</ul>
+<h3 id="元字符串"><a href="#元字符串" class="headerlink" title="元字符串"></a>元字符串</h3><p>通过测试工具演示下面元字符的使用</p>
+<h4 id="常用元字符串"><a href="#常用元字符串" class="headerlink" title="常用元字符串"></a>常用元字符串</h4><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母，数字，下划线</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意单个字符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>表示匹配行首的文本(以谁开始)</td>
+</tr>
+<tr>
+<td>$</td>
+<td>表示匹配行尾的文本(以谁结束)</td>
+</tr>
+</tbody></table>
+<h4 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h4><table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>重复零次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复零次或一次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody></table>
+<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[] 字符串用中括号括起来，表示匹配其中的任一字符，相当于或的意思</span><br><span class="line">[^]  匹配除中括号以内的内容</span><br><span class="line">\ 转义符</span><br><span class="line">| 或者，选择两者中的一个。注意|将左右两边分为两部分，而不管左右两边有多长多乱</span><br><span class="line">() 从两个直接量中选择一个，分组</span><br><span class="line">   eg：gr(a|e)y匹配gray和grey</span><br><span class="line">[\u4e00-\u9fa5]  匹配汉字</span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaScript-垃圾回收机制"><a href="#JavaScript-垃圾回收机制" class="headerlink" title="JavaScript 垃圾回收机制"></a>JavaScript 垃圾回收机制</h3><h3 id="JavaScript-运行机制：Event-Loop"><a href="#JavaScript-运行机制：Event-Loop" class="headerlink" title="JavaScript 运行机制：Event Loop"></a>JavaScript 运行机制：Event Loop</h3><h4 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h4><ul>
+<li>Object.assign()</li>
+<li>Object.create()</li>
+<li>Object.keys()</li>
+<li>Object.defineProperty()</li>
+</ul>
+<h4 id="实例成员"><a href="#实例成员" class="headerlink" title="实例成员"></a>实例成员</h4><ul>
+<li>constructor</li>
+<li>hasOwnProperty()</li>
+<li>isPrototypeOf</li>
+<li>propertyIsEnumerable()</li>
+<li>toString()</li>
+<li>valueOf()</li>
+</ul>
+<hr>
+<h4 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h4><ul>
+<li><a href="https://github.com/feross/standard" target="_blank" rel="noopener">JavaScript Standard Style </a></li>
+<li><a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">Airbnb JavaScript Style Guide()</a></li>
+</ul>
+<h4 id="校验工具"><a href="#校验工具" class="headerlink" title="校验工具"></a>校验工具</h4><ul>
+<li><a href="https://github.com/douglascrockford/JSLint" target="_blank" rel="noopener">JSLint</a></li>
+<li><a href="https://github.com/jshint/jshint" target="_blank" rel="noopener">JSHint</a></li>
+<li><a href="https://github.com/eslint/eslint" target="_blank" rel="noopener">ESLint</a></li>
+</ul>
+<h3 id="文档相关工具"><a href="#文档相关工具" class="headerlink" title="文档相关工具"></a>文档相关工具</h3><ul>
+<li>电子文档制作工具: <a href="https://github.com/egoist/docute" target="_blank" rel="noopener">docute</a></li>
+<li>流程图工具：<a href="http://logicnet.dk/DiagramDesigner/" target="_blank" rel="noopener">DiagramDesigner</a></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       <a data-url="http://yuanquan.com/2020/07/10/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" data-id="ckcgbfms50000g4tn5u0d1u8n" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" rel="tag">javascript高级学习</a></li></ul>
+
     </footer>
   </div>
   
@@ -776,7 +1037,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">CSS基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">HTML基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">Web-Api基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback%E4%BD%93%E4%BC%9A/" rel="tag">callback体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">hexo 上传图片不显示问题解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">javascipt基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" rel="tag">引用错误和类型错误</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">CSS基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">HTML基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">Web-Api基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback%E4%BD%93%E4%BC%9A/" rel="tag">callback体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">hexo 上传图片不显示问题解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">javascipt基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" rel="tag">javascript高级学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" rel="tag">引用错误和类型错误</a></li></ul>
     </div>
   </div>
 
@@ -786,7 +1047,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">CSS基础学习</a> <a href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">HTML基础学习</a> <a href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">Web-Api基础学习</a> <a href="/tags/callback%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">callback体会</a> <a href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">hexo 上传图片不显示问题解决</a> <a href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascipt基础学习</a> <a href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" style="font-size: 10px;">引用错误和类型错误</a>
+      <a href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">CSS基础学习</a> <a href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">HTML基础学习</a> <a href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">Web-Api基础学习</a> <a href="/tags/callback%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">callback体会</a> <a href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">hexo 上传图片不显示问题解决</a> <a href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascipt基础学习</a> <a href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascript高级学习</a> <a href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" style="font-size: 10px;">引用错误和类型错误</a>
     </div>
   </div>
 
