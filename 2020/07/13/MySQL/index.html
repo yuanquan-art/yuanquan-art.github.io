@@ -5,19 +5,19 @@
   
 
   
-  <title>javascript基础 | 万古长空，一朝风月</title>
+  <title>MySQL | 万古长空，一朝风月</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js的介绍及基本语法变量Javascript是什么？ 是一门脚本语言 是一门解释性语言 是一门动态类型的语言 是一门基于对象的语言  123451.编译语言：需要把代码翻译成计算机所认知的二进制语言，才能够执行2.脚本语言：不需要编译，直接执行 常见的脚本语言：t-sql,cmd 变量 操作的数据都是在内存中操作  声明变量及赋值：   1var num &#x3D;10；   注释：是解释代码的">
+  <meta name="description" content="一、安装MySQL数据库二、安装可视化工具、推荐 Navicat Premium三、基本概念 数据库  表  字段 —- 指的就是列  字段类型 —- 指的就是列能够存储的数据类型 12345int char()varchardatedecimal    四、基本查询语句查询12345‐‐ 查询数据 ‐‐ select 字段[, 字段2] from 表名 select id, name, birt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript基础">
-<meta property="og:url" content="http://yuanquan.com/2020/07/08/javascript%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="http://yuanquan.com/2020/07/13/MySQL/index.html">
 <meta property="og:site_name" content="万古长空，一朝风月">
-<meta property="og:description" content="js的介绍及基本语法变量Javascript是什么？ 是一门脚本语言 是一门解释性语言 是一门动态类型的语言 是一门基于对象的语言  123451.编译语言：需要把代码翻译成计算机所认知的二进制语言，才能够执行2.脚本语言：不需要编译，直接执行 常见的脚本语言：t-sql,cmd 变量 操作的数据都是在内存中操作  声明变量及赋值：   1var num &#x3D;10；   注释：是解释代码的">
+<meta property="og:description" content="一、安装MySQL数据库二、安装可视化工具、推荐 Navicat Premium三、基本概念 数据库  表  字段 —- 指的就是列  字段类型 —- 指的就是列能够存储的数据类型 12345int char()varchardatedecimal    四、基本查询语句查询12345‐‐ 查询数据 ‐‐ select 字段[, 字段2] from 表名 select id, name, birt">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-08T04:52:50.000Z">
-<meta property="article:modified_time" content="2020-07-08T05:46:56.029Z">
+<meta property="article:published_time" content="2020-07-13T14:23:16.000Z">
+<meta property="article:modified_time" content="2020-07-14T06:53:56.770Z">
 <meta property="article:author" content="袁泉">
-<meta property="article:tag" content="javascipt基础学习">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="万古长空，一朝风月" type="application/atom+xml">
@@ -71,10 +71,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-javascript基础" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MySQL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/08/javascript%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time datetime="2020-07-08T04:52:50.000Z" itemprop="datePublished">2020-07-08</time>
+    <a href="/2020/07/13/MySQL/" class="article-date">
+  <time datetime="2020-07-13T14:23:16.000Z" itemprop="datePublished">2020-07-13</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      javascript基础
+      MySQL
     </h1>
   
 
@@ -93,68 +93,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="js的介绍及基本语法变量"><a href="#js的介绍及基本语法变量" class="headerlink" title="js的介绍及基本语法变量"></a>js的介绍及基本语法变量</h2><h3 id="Javascript是什么？"><a href="#Javascript是什么？" class="headerlink" title="Javascript是什么？"></a>Javascript是什么？</h3><ul>
-<li>是一门脚本语言</li>
-<li>是一门解释性语言</li>
-<li>是一门动态类型的语言</li>
-<li>是一门基于对象的语言</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.编译语言：需要把代码翻译成计算机所认知的二进制语言，才能够执行</span><br><span class="line"></span><br><span class="line">2.脚本语言：不需要编译，直接执行</span><br><span class="line"></span><br><span class="line"> 常见的脚本语言：t-sql,cmd</span><br></pre></td></tr></table></figure>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>操作的数据都是在内存中操作</p>
+        <h2 id="一、安装MySQL数据库"><a href="#一、安装MySQL数据库" class="headerlink" title="一、安装MySQL数据库"></a>一、安装MySQL数据库</h2><h2 id="二、安装可视化工具、推荐-Navicat-Premium"><a href="#二、安装可视化工具、推荐-Navicat-Premium" class="headerlink" title="二、安装可视化工具、推荐 Navicat Premium"></a>二、安装可视化工具、推荐 Navicat Premium</h2><h2 id="三、基本概念"><a href="#三、基本概念" class="headerlink" title="三、基本概念"></a>三、基本概念</h2><ul>
+<li><p>数据库</p>
 </li>
-<li><p>声明变量及赋值：</p>
+<li><p>表</p>
 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D;10；</span><br></pre></td></tr></table></figure>
+<li><p>字段 —- 指的就是列</p>
+</li>
+<li><p>字段类型 —- 指的就是列能够存储的数据类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int </span><br><span class="line">char()</span><br><span class="line">varchar</span><br><span class="line">date</span><br><span class="line">decimal</span><br></pre></td></tr></table></figure>
 
-
-<h3 id="注释：是解释代码的含义，给其他程序员看的"><a href="#注释：是解释代码的含义，给其他程序员看的" class="headerlink" title="注释：是解释代码的含义，给其他程序员看的"></a>注释：是解释代码的含义，给其他程序员看的</h3><ul>
-<li>注释的方式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">单行注释  &#x2F;&#x2F;</span><br><span class="line"></span><br><span class="line">多行注释&#x2F;* *&#x2F;</span><br></pre></td></tr></table></figure></li>
-<li>js 中的原始数据类型：number,string,boolean,null,undefined,object</li>
-</ul>
-<h2 id="JS分三个部分："><a href="#JS分三个部分：" class="headerlink" title="JS分三个部分："></a>JS分三个部分：</h2><ul>
-<li>ECMAScript标准:js的基本语法</li>
-<li>DOM</li>
-<li>BOM</li>
-</ul>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
-<li>函数：把一些重复的代码封装在一个地方，在需要的时候直接调用这个地方的代码就可以了</li>
-<li>函数作用：代码重用</li>
-<li>预解析：在代码执行之前做的事情（如变量提升）</li>
-</ul>
-<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><ul>
-<li>编程思想：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">面向过程：凡事亲力亲为，所有的事情的过程都要清楚，注重的是过程</span><br><span class="line"></span><br><span class="line">面向对象：提出需求，找到对象，对象解决这个问题，我们要结果，注重的是结果</span><br></pre></td></tr></table></figure></li>
-<li>面向对象的特性：封装，继承，多态，（抽象性）</li>
-</ul>
-<ul>
-<li><p>创建对象的方式：</p>
-<p>  1、 通过调用系统的构造函数创建对象  </p>
-<pre><code>`new Object()`
-
- `var obj1=new Object();`</code></pre><p>  2、 自定义构造函数（）；</p>
-<pre><code>`var obj2=new 自定义构造函数（）；`</code></pre><p>  3、 字面量的方式创建对象var obj3={};</p>
 </li>
 </ul>
-<h3 id="new-的执行过程："><a href="#new-的执行过程：" class="headerlink" title="new  的执行过程："></a>new  的执行过程：</h3><p>1、开辟空间，存储创建的新的对象</p>
-<p>2、把this设置为当前的对象</p>
-<p>3、设置属性和方法的值</p>
-<p>4、返回当前的新的对象</p>
-<h3 id="内置对象-1"><a href="#内置对象-1" class="headerlink" title="内置对象"></a>内置对象</h3><p>Math</p>
-<p>Date</p>
-<p>Array</p>
-<p>String</p>
-<ul>
-<li>基本包装类型：本身是基本类型，但是在执行代码的过程中，如果这种类型的变量调用了属性或者是方法，那么这种类型就不再是基本类型了，而是基本包装类型，这个变量也不是普通的变量了，而是基本包装类型对象</li>
-</ul>
+<h2 id="四、基本查询语句"><a href="#四、基本查询语句" class="headerlink" title="四、基本查询语句"></a>四、基本查询语句</h2><h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">‐‐ 查询数据 </span><br><span class="line">‐‐ select 字段[, 字段2] from 表名 </span><br><span class="line">select id, name, birthday from users;</span><br><span class="line">‐‐ 通配 * 找到表中所有列 </span><br><span class="line">select * from users;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">‐‐ 新增数据 </span><br><span class="line">‐‐ 插入全部字段 </span><br><span class="line">insert into users values (null, &#39;王五&#39;, 0, &#39;2020‐12‐12&#39;, &#39;12312&#39;);</span><br><span class="line">‐‐ 指定字段 insert into users (name, gender, avatar) values (&#39;王五&#39;, 0, &#39;12312&#39;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">‐‐ 更新数据 </span><br><span class="line"> update users set name &#x3D; &#39;麻子&#39;, gender &#x3D; 0</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">‐‐ 删除语句必须指定条件 delete from users 12345612345</span><br></pre></td></tr></table></figure>
+
+<h3 id="筛选子语句"><a href="#筛选子语句" class="headerlink" title="筛选子语句"></a>筛选子语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">delete from users where id &#x3D; 6</span><br><span class="line">delete from users where id &#x3D; 6 and gender &#x3D; 0</span><br><span class="line">delete from users where id &#x3D; 6 or gender &#x3D; 0</span><br><span class="line">delete from users where id &gt; 6 </span><br><span class="line">delete from users where id in (4, 5) select fn(field1) from table 12345</span><br></pre></td></tr></table></figure>
+<h2 id="五、PHP操作数据库"><a href="#五、PHP操作数据库" class="headerlink" title="五、PHP操作数据库"></a>五、PHP操作数据库</h2><p>  <a href="http://php.net/manual/zh/refs.database.php" target="_blank" rel="noopener">数据库扩展</a></p>
+<pre><code class="php"><span class="comment">// 假定数据库用户名：root，密码：wanglei，数据库：baixiu </span>
+$connection = mysqli_connect(<span class="string">"localhost"</span>, <span class="string">"root"</span>, <span class="string">"wanglei"</span>, <span class="string">"baixiu"</span>);
+<span class="keyword">if</span> (!$connection) { <span class="comment">// 如果连接失败报错 </span>
+   <span class="keyword">die</span>(<span class="string">'&lt;h1&gt;Connect Error ('</span> . mysqli_connect_errno() . <span class="string">') '</span> . mysqli_connect_error() . <span class="string">'&lt;/h1&gt;'</span>);
+} 
+$sql = <span class="string">"select * from users"</span>; 
+$result = mysqli_query($connection, $sql); 
+<span class="comment">// 查询数据填充到关联数组  </span>
+<span class="keyword">while</span> ($row = mysqli_fetch_assoc($result)) { 
+   <span class="keyword">echo</span> $row[<span class="string">"id"</span>] . <span class="string">" ‐ "</span> . $row[<span class="string">"username"</span>]; }
+   <span class="comment">// 释放结果集 </span>
+   mysqli_free_result($result); 
+   mysqli_close($connection); </code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yuanquan.com/2020/07/08/javascript%E5%9F%BA%E7%A1%80/" data-id="ckcd3xlyx0000jktnamuu87s0" class="article-share-link">Share</a>
+      <a data-url="http://yuanquan.com/2020/07/13/MySQL/" data-id="ckclky4r60000hgtnc5vjff6i" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">javascipt基础学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
 
     </footer>
   </div>
@@ -162,19 +142,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/07/08/CSS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CSS
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/05/HTML/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/13/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">HTML</div>
+      <div class="article-nav-title">PHP基础学习</div>
     </a>
   
 </nav>
