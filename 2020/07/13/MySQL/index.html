@@ -15,7 +15,7 @@
 <meta property="og:description" content="一、安装MySQL数据库二、安装可视化工具、推荐 Navicat Premium三、基本概念 数据库  表  字段 —- 指的就是列  字段类型 —- 指的就是列能够存储的数据类型 12345int char()varchardatedecimal    四、基本查询语句查询12345‐‐ 查询数据 ‐‐ select 字段[, 字段2] from 表名 select id, name, birt">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-13T14:23:16.000Z">
-<meta property="article:modified_time" content="2020-07-14T06:53:56.770Z">
+<meta property="article:modified_time" content="2020-07-14T06:56:30.013Z">
 <meta property="article:author" content="袁泉">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
@@ -114,19 +114,20 @@
 
 <h3 id="筛选子语句"><a href="#筛选子语句" class="headerlink" title="筛选子语句"></a>筛选子语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">delete from users where id &#x3D; 6</span><br><span class="line">delete from users where id &#x3D; 6 and gender &#x3D; 0</span><br><span class="line">delete from users where id &#x3D; 6 or gender &#x3D; 0</span><br><span class="line">delete from users where id &gt; 6 </span><br><span class="line">delete from users where id in (4, 5) select fn(field1) from table 12345</span><br></pre></td></tr></table></figure>
 <h2 id="五、PHP操作数据库"><a href="#五、PHP操作数据库" class="headerlink" title="五、PHP操作数据库"></a>五、PHP操作数据库</h2><p>  <a href="http://php.net/manual/zh/refs.database.php" target="_blank" rel="noopener">数据库扩展</a></p>
-<pre><code class="php"><span class="comment">// 假定数据库用户名：root，密码：wanglei，数据库：baixiu </span>
-$connection = mysqli_connect(<span class="string">"localhost"</span>, <span class="string">"root"</span>, <span class="string">"wanglei"</span>, <span class="string">"baixiu"</span>);
-<span class="keyword">if</span> (!$connection) { <span class="comment">// 如果连接失败报错 </span>
-   <span class="keyword">die</span>(<span class="string">'&lt;h1&gt;Connect Error ('</span> . mysqli_connect_errno() . <span class="string">') '</span> . mysqli_connect_error() . <span class="string">'&lt;/h1&gt;'</span>);
-} 
-$sql = <span class="string">"select * from users"</span>; 
-$result = mysqli_query($connection, $sql); 
-<span class="comment">// 查询数据填充到关联数组  </span>
-<span class="keyword">while</span> ($row = mysqli_fetch_assoc($result)) { 
-   <span class="keyword">echo</span> $row[<span class="string">"id"</span>] . <span class="string">" ‐ "</span> . $row[<span class="string">"username"</span>]; }
-   <span class="comment">// 释放结果集 </span>
-   mysqli_free_result($result); 
-   mysqli_close($connection); </code></pre>
+<pre><code class="php"> <span class="comment">// 假定数据库用户名：root，密码：wanglei，数据库：baixiu </span>
+ $connection = mysqli_connect(<span class="string">"localhost"</span>, <span class="string">"root"</span>, <span class="string">"wanglei"</span>, <span class="string">"baixiu"</span>);
+ <span class="keyword">if</span> (!$connection) { <span class="comment">// 如果连接失败报错 </span>
+    <span class="keyword">die</span>(<span class="string">'&lt;h1&gt;Connect Error ('</span> . mysqli_connect_errno() . <span class="string">') '</span> . mysqli_connect_error() . <span class="string">'&lt;/h1&gt;'</span>);
+ } 
+ $sql = <span class="string">"select * from users"</span>; 
+ $result = mysqli_query($connection, $sql); 
+ <span class="comment">// 查询数据填充到关联数组  </span>
+ <span class="keyword">while</span> ($row = mysqli_fetch_assoc($result)) { 
+    <span class="keyword">echo</span> $row[<span class="string">"id"</span>] . <span class="string">" ‐ "</span> . $row[<span class="string">"username"</span>]; }
+    <span class="comment">// 释放结果集 </span>
+    mysqli_free_result($result); 
+    mysqli_close($connection); 
+}</code></pre>
 
       
     </div>
@@ -141,6 +142,15 @@ $result = mysqli_query($connection, $sql);
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/07/14/AJAX%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AJAX基础学习
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/13/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
@@ -164,7 +174,7 @@ $result = mysqli_query($connection, $sql);
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">CSS基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">HTML基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">PHP基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">Web-Api基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback%E4%BD%93%E4%BC%9A/" rel="tag">callback体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">hexo 上传图片不显示问题解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">jQuery学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">javascipt基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" rel="tag">javascript高级学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" rel="tag">引用错误和类型错误</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">AJAX基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">CSS基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">HTML基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">PHP基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">Web-Api基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback%E4%BD%93%E4%BC%9A/" rel="tag">callback体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="tag">hexo 上传图片不显示问题解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">jQuery学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="tag">javascipt基础学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" rel="tag">javascript高级学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" rel="tag">引用错误和类型错误</a></li></ul>
     </div>
   </div>
 
@@ -174,7 +184,7 @@ $result = mysqli_query($connection, $sql);
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">CSS基础学习</a> <a href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">HTML基础学习</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">PHP基础学习</a> <a href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">Web-Api基础学习</a> <a href="/tags/callback%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">callback体会</a> <a href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">hexo 上传图片不显示问题解决</a> <a href="/tags/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">jQuery学习笔记</a> <a href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascipt基础学习</a> <a href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascript高级学习</a> <a href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" style="font-size: 10px;">引用错误和类型错误</a>
+      <a href="/tags/AJAX%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">AJAX基础学习</a> <a href="/tags/CSS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">CSS基础学习</a> <a href="/tags/HTML%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">HTML基础学习</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/PHP%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">PHP基础学习</a> <a href="/tags/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">Web-Api基础学习</a> <a href="/tags/callback%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">callback体会</a> <a href="/tags/hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">hexo 上传图片不显示问题解决</a> <a href="/tags/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">jQuery学习笔记</a> <a href="/tags/javascipt%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascipt基础学习</a> <a href="/tags/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">javascript高级学习</a> <a href="/tags/%E5%BC%95%E7%94%A8%E9%94%99%E8%AF%AF%E5%92%8C%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF/" style="font-size: 10px;">引用错误和类型错误</a>
     </div>
   </div>
 
@@ -196,6 +206,10 @@ $result = mysqli_query($connection, $sql);
       <ul>
         
           <li>
+            <a href="/2020/07/14/AJAX%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">AJAX基础学习</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/13/MySQL/">MySQL</a>
           </li>
         
@@ -209,10 +223,6 @@ $result = mysqli_query($connection, $sql);
         
           <li>
             <a href="/2020/07/10/javascript%E9%AB%98%E7%BA%A7%E5%AD%A6%E4%B9%A0/">javascript高级学习</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/10/Web-Api%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Web-Api基础学习</a>
           </li>
         
       </ul>
